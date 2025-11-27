@@ -1,0 +1,315 @@
+/* Styles spécifiques à la page d'authentification */
+.auth-page-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-logo {
+  margin-left: 100px;
+  max-width: 250px;
+  margin-bottom: 30px;
+}
+
+/* Section Bienvenue */
+.auth-welcome-section {
+  flex: 1;
+  background-color: #08325f;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.auth-welcome-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.auth-welcome-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  width: auto;
+}
+
+.auth-welcome-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Section Formulaire */
+.auth-form-section {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.auth-form-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.auth-form-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #08325f;
+  font-size: 1.8rem;
+}
+
+.auth-form-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #495057;
+}
+
+.auth-form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-sizing: border-box;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form-input:focus {
+  border-color: #4da8ff;
+  outline: none;
+}
+
+.auth-form-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #08325f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-form-btn:hover {
+  background-color: #3a8de4;
+}
+
+.auth-form-switch-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  color: #4da8ff;
+  border: 2px solid #4da8ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.auth-form-switch-btn:hover {
+  background-color: #4da8ff;
+  color: white;
+}
+
+/* Google Connect Section */
+.auth-google-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Google Connect Button */
+.auth-google-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  color: #757575;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.auth-google-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #c0c0c0;
+}
+
+.auth-google-icon {
+  width: 20px;
+  height: 20px;
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Separator */
+.auth-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.auth-separator::before,
+.auth-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.auth-separator-text {
+  padding: 0 15px;
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.auth-form-message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.auth-form-success {
+  color: #2ecc71;
+}
+
+.auth-form-error {
+  color: #ff6b6b;
+}
+
+.auth-form-link {
+  color: #4da8ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Notes container spécifique */
+.auth-notes-container {
+  margin-bottom: 20px;
+}
+
+.auth-notes-title {
+  font-size: 1.2rem;
+  margin: 20px 0 10px;
+  color: #08325f;
+}
+
+/* ==================== */
+/* LANGUAGE SPECIFIC CSS */
+/* ==================== */
+
+/* RTL Layout (Arabic) */
+[dir="rtl"] .auth-welcome-section {
+  padding-right: 60px;
+  padding-left: 40px;
+}
+
+[dir="rtl"] .auth-logo {
+  margin-left: 0;
+  margin-right: 100px;
+}
+
+[dir="rtl"] .auth-welcome-btn {
+  align-self: flex-end;
+}
+
+/* Text Direction */
+[dir="rtl"] .auth-form-container,
+[dir="rtl"] .auth-form-label,
+[dir="rtl"] .auth-form-message {
+  text-align: right;
+}
+
+/* Input Fields */
+[dir="rtl"] .auth-form-input {
+  text-align: right;
+  direction: rtl;
+  padding-right: 12px;
+}
+
+/* Google Button RTL */
+[dir="rtl"] .auth-google-btn {
+  flex-direction: row-reverse;
+}
+
+/* Arabic Font Styling */
+[lang="ar"] .auth-welcome-title,
+[lang="ar"] .auth-form-title {
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+[lang="ar"] .auth-welcome-text,
+[lang="ar"] .auth-form-label {
+  font-size: 1.05rem; /* Slightly larger for Arabic readability */
+  line-height: 1.8;
+}
+
+/* Button Adjustments */
+[dir="rtl"] .auth-form-btn {
+  letter-spacing: 0; /* Remove letter spacing for Arabic */
+}
+
+/* Responsive RTL Adjustments */
+@media (max-width: 768px) {
+  [dir="rtl"] .auth-welcome-section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  
+  [dir="rtl"] .auth-logo {
+    margin-right: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-page-container {
+    flex-direction: column;
+  }
+  
+  .auth-welcome-section,
+  .auth-form-section {
+    padding: 40px 20px;
+  }
+}
