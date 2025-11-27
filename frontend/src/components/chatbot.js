@@ -2001,7 +2001,7 @@ const Chatbot = () => {
     // Fonction Gemini
     const callGemini = async (question, userData) => {
         try {
-            const API_KEY = "AIzaSyBpE8-1xlQ5Fwd6eq5vgTe0pWerXxzhEzA";
+            const API_KEY = "";
 
             const isArabic = /[\u0600-\u06FF]/.test(question);
             const isEnglish = /^[a-zA-Z\s.,!?]+$/.test(question) && !question.includes('é') && !question.includes('è');
