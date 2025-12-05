@@ -2,12 +2,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from urllib.parse import unquote
-from ..repositories.orientation_repository import OrientationRepository
+from ..repositories.mock_orientation_repository import MockOrientationRepository
 from ..serializers.orientation import OrientationSerializer
 
 class OrientationList(APIView):
     def get(self, request):
-        repo = OrientationRepository()
+        repo = MockOrientationRepository()
         try:
             orientations = repo.get_all()
             serializer = OrientationSerializer(orientations, many=True)
@@ -17,7 +17,7 @@ class OrientationList(APIView):
 
 class OrientationDetail(APIView):
     def get(self, request, orientation_id):
-        repo = OrientationRepository()
+        repo = MockOrientationRepository()
         try:
             orientation = repo.get_by_id(orientation_id)
             if orientation:
@@ -30,7 +30,7 @@ class OrientationDetail(APIView):
 
 class OrientationByCode(APIView):
     def get(self, request, code):
-        repo = OrientationRepository()
+        repo = MockOrientationRepository()
         try:
             orientations = repo.get_by_code(code)
             if orientations:
@@ -44,7 +44,7 @@ class OrientationByCode(APIView):
 class OrientationByBacType(APIView):
     def get(self, request, bac_type):
         try:
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             orientations = repo.get_by_bac_type(bac_type)
             serializer = OrientationSerializer(orientations, many=True)
             return Response(serializer.data)
@@ -55,7 +55,7 @@ class OrientationByInstitution(APIView):
     def get(self, request, institution):
         try:
             institution = unquote(institution)
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             orientations = repo.get_by_institution(institution)
             serializer = OrientationSerializer(orientations, many=True)
             return Response(serializer.data)
@@ -66,7 +66,7 @@ class OrientationByCategory(APIView):
     def get(self, request, category):
         try:
             category = unquote(category)
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             orientations = repo.get_by_category(category)
             serializer = OrientationSerializer(orientations, many=True)
             return Response(serializer.data)
@@ -77,7 +77,7 @@ class OrientationBySpecialty(APIView):
     def get(self, request, specialty):
         try:
             specialty = unquote(specialty)
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             orientations = repo.get_by_specialty(specialty)
             serializer = OrientationSerializer(orientations, many=True)
             return Response(serializer.data)
@@ -85,7 +85,7 @@ class OrientationBySpecialty(APIView):
             return Response({'error': str(e)}, status=500)
 class OrientationByDegree(APIView):
     def get(self, request, degree):
-        repo = OrientationRepository()
+        repo = MockOrientationRepository()
         orientations = repo.get_by_degree(degree)
         serializer = OrientationSerializer(orientations, many=True)
         return Response(serializer.data)
@@ -93,7 +93,7 @@ class OrientationByDegree(APIView):
 class DegreeList(APIView):
     def get(self, request):
         try:
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             degrees = repo.get_all_degrees()
             return Response(list(degrees), status=status.HTTP_200_OK)
         except Exception as e:
@@ -101,7 +101,7 @@ class DegreeList(APIView):
 class SpecialtyList(APIView):
     def get(self, request):
         try:
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             specialties = repo.get_all_specialties()
             return Response(list(specialties), status=status.HTTP_200_OK)
         except Exception as e:
@@ -110,7 +110,7 @@ class SpecialtyList(APIView):
 class RegionList(APIView):
     def get(self, request):
         try:
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             regions = repo.get_all_regions()
             return Response(list(regions), status=status.HTTP_200_OK)
         except Exception as e:
@@ -120,7 +120,7 @@ class OrientationByRegion(APIView):
     def get(self, request, region):
         try:
             region = unquote(region)
-            repo = OrientationRepository()
+            repo = MockOrientationRepository()
             orientations = repo.get_by_region(region)
             serializer = OrientationSerializer(orientations, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
